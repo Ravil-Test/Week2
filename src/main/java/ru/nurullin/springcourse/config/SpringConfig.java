@@ -1,4 +1,4 @@
-package ru.nurullin.config;
+package ru.nurullin.springcourse.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -13,7 +13,7 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration
-@ComponentScan("ru.nurullin")
+@ComponentScan("ru.nurullin.springcourse")
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
 

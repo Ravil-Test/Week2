@@ -1,4 +1,4 @@
-package ru.nurullin.config;
+package ru.nurullin.springcourse.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
