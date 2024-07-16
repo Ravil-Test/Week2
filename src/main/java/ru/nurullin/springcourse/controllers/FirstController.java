@@ -20,8 +20,8 @@ public class FirstController {
 
     @PostMapping
     public String home(
-            @RequestParam(name = "first_number", defaultValue = "0") String first_number,
-            @RequestParam(name = "second_number", defaultValue = "0") String second_number,
+            @RequestParam(name = "firstNumber", defaultValue = "0") int firstNumber,
+            @RequestParam(name = "secondNumber", defaultValue = "0") int secondNumber,
             @RequestParam(name = "operation", required = false) Operations operation,
             @RequestParam(name = "result_field", required = false, defaultValue = "") String result_field,
             Model model) {
@@ -29,33 +29,30 @@ public class FirstController {
         StringBuilder builder = new StringBuilder();
         builder.append(result_field);
 
-        String result = result_field + "\n";
-        try {
-            int first = Integer.parseInt(first_number);
-            int second = Integer.parseInt(second_number);
-
-            switch (operation) {
-                case ADDITION: result = first + second + "";
-                    break;
-                case SUBTRACTION: result = first - second + "";
-                    break;
-                case MULTIPLICATION: result = first * second + "";
-                    break;
-                case DIVISION: result = first / second + "";
-                    break;
-                default: result = "Ошибка ввода данных";
-            }
-        } catch (Exception e) {
-            result = "Ошибка ввода данных";
-        }
+        String result = getResult(firstNumber, secondNumber, operation);
 
         builder.insert(0, result + "\n");
 
         model.addAttribute("operation", operation);
-        model.addAttribute("first_number", first_number);
-        model.addAttribute("second_number", second_number);
+        model.addAttribute("first_number", firstNumber);
+        model.addAttribute("second_number", secondNumber);
         model.addAttribute("result_field", builder.toString());
         return "first/home";
+    }
+
+    private static String getResult(int firstNumber, int secondNumber, Operations operation) {;
+        switch (operation) {
+            case ADDITION:
+                return firstNumber + secondNumber + "";
+            case SUBTRACTION:
+                return firstNumber - secondNumber + "";
+            case MULTIPLICATION:
+                return firstNumber * secondNumber + "";
+            case DIVISION:
+                return firstNumber / secondNumber + "";
+            default:
+                return "Ошибка ввода данных";
+        }
     }
 
 }
