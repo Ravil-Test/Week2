@@ -1,16 +1,16 @@
 package ru.nurullin.springcourse.models;
 
-public class Person {
+public class Gun {
     private int id;
     private String name;
     private String type;
     private int capacity;
 
-    public Person() {
+    public Gun() {
 
     }
 
-    public Person(int id, String name, String type, int capacity) {
+    public Gun(int id, String name, String type, int capacity) {
         this.id = id;
         this.name = name;
         this.type = type;
