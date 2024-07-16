@@ -6,9 +6,6 @@ import ru.nurullin.springcourse.models.Gun;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Neil Alishev
- */
 @Component
 public class GunDAO {
     private static int WEAPON_COUNT;

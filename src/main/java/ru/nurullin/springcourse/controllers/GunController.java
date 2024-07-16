@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.nurullin.springcourse.dao.GunDAO;
 import ru.nurullin.springcourse.models.Gun;
 
-/**
- * @author Neil Alishev
- */
 @Controller
 @RequestMapping("/weapon")
 public class GunController {
