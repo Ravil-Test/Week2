@@ -27,6 +27,15 @@ public class Person {
         this.manName = manName;
     }
 
+    public Person(int id, String manName, String manSurname, int manAge, double manExp, String manSpec) {
+        this.id = id;
+        this.manName = manName;
+        this.manSurname = manSurname;
+        this.manAge = manAge;
+        this.manExp = manExp;
+        this.manSpec = manSpec;
+    }
+
     public int getId() {
         return id;
     }

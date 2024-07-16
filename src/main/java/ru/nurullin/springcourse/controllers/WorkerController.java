@@ -31,7 +31,7 @@ public class WorkerController {
     }
 
     @GetMapping("/new")
-    public String newGun(@ModelAttribute("person") Person person) {
+    public String newPerson(@ModelAttribute("person") Person person) {
         return "people/new";
     }
 

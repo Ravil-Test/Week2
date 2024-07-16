@@ -9,11 +9,21 @@
 <div th:each="person : ${people}">
     <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getWorkName()}">user</a>
 </div>
+<hr/>
+<div th:each="person : ${peopleman}">
+<a th:href="@{/people1/{id}(id=${person.getId()})}" th:text="${person.getManSurname()}">user</a>
+</div>
 
 <br/>
 <hr/>
 
-<a href="/people/new">Create new person</a>
-
+<a href="/people/new">Create new worker</a>
+<a href="/people1/newman">Create new manager</a>
+<br/>
+<hr/>
+<form>
+    <input type="button" onclick="document.location='http://localhost:8081/people'" value="Workers"/>
+    <input type="button" onclick="document.location='http://localhost:8081/people1'" value="Managers"/>
+</form>
 </body>
 </html>
